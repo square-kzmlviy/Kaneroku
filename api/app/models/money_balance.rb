@@ -1,0 +1,2 @@
+class MoneyBalance < ApplicationRecord
+end
