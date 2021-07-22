@@ -1,4 +1,4 @@
-.user_form {
+.header_toolber {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 }
