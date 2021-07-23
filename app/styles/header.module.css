@@ -2,3 +2,8 @@
     display: flex;
     justify-content: space-between;
 }
+
+.header_user {
+    display: flex;
+    align-items: center;
+}
