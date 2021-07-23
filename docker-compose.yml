@@ -25,7 +25,7 @@ services:
         build: ./front
         tty: true
         environment:
-            - NODE_ENV=production
+            - NODE_ENV=production node server.js
             - CHOKIDAR_USEPOLLING=true
         volumes:
             - ./app:/usr/src/app
