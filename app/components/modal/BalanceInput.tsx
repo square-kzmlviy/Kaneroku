@@ -10,4 +10,18 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 
 
-export default function BalanceInput(props: BalanceInput) {}
+interface CategoryData {
+    name: string;
+    id: number;
+}
+
+const initialCategoryData: CategoryData = {
+    name: "",
+    id: 0,
+};
+interface BalanceInput {
+    open: boolean;
+    onClose: () => void;
+}
+    const [categoryList, setcategoryList] = useState<CategoryData[]>([]);
+    const [category, setCategory] = useState<CategoryData>(initialCategoryData);
