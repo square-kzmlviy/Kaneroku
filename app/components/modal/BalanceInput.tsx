@@ -9,6 +9,17 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        formControl: {
+            margin: theme.spacing(1),
+            minWidth: 120,
+        },
+        selectEmpty: {
+            marginTop: theme.spacing(2),
+        },
+    })
+);
 
 interface CategoryData {
     name: string;
