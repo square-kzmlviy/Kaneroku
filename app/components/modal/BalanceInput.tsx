@@ -23,5 +23,19 @@ interface BalanceInput {
     open: boolean;
     onClose: () => void;
 }
+
+export default function BalanceInput(props: BalanceInput) {
+    const classes = useStyles();
     const [categoryList, setcategoryList] = useState<CategoryData[]>([]);
     const [category, setCategory] = useState<CategoryData>(initialCategoryData);
+    const { onClose, open } = props;
+
+    const handleClose = () => {
+        onClose();
+    };
+    return (
+        <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
+            <DialogTitle id="simple-dialog-title">収支登録</DialogTitle>
+        </Dialog>
+    );
+}
