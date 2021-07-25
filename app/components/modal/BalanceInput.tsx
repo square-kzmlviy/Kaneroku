@@ -8,6 +8,11 @@ import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
+import CategoryCreate from "./CategoryCreate";
+import Paper from "@material-ui/core/Paper";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -15,9 +20,17 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: theme.spacing(1),
             minWidth: 120,
         },
+        valueinput: {
+            margin: theme.spacing(1),
+            minWidth: 120,
+        },
         selectEmpty: {
             marginTop: theme.spacing(2),
         },
+        categoryLabel: {
+            // position: "static",
+        },
+        select: { marginTop: "0" },
     })
 );
 
@@ -26,10 +39,19 @@ interface CategoryData {
     id: number;
 }
 
+interface BalanceData {
+    value: number;
+}
+
 const initialCategoryData: CategoryData = {
     name: "",
     id: 0,
 };
+
+const initialBalanceData: BalanceData = {
+    value: 0,
+};
+
 interface BalanceInput {
     open: boolean;
     onClose: () => void;
@@ -69,6 +91,13 @@ export default function BalanceInput(props: BalanceInput) {
     return (
         <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
             <DialogTitle id="simple-dialog-title">収支登録</DialogTitle>
+            <TextField
+                id="standard-basic"
+                label="name"
+                name="name"
+                onChange={handleChange}
+                className={classes.valueinput}
+            />
             <FormControl className={classes.formControl}>
                 <InputLabel id="demo-simple-select-label">Category</InputLabel>
                 <Select
