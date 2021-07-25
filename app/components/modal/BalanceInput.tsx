@@ -94,13 +94,22 @@ export default function BalanceInput(props: BalanceInput) {
         newValue ? setIsIncome(true) : setIsIncome(false);
         console.log(isIncome);
     };
+
     const handleClose = () => {
         onClose();
     };
 
+    function handleCategoryCreateClickOpen() {
+        setCategoryCreateOpen(true);
+    }
+
+    function handleCategoryCreateClose() {
+        setCategoryCreateOpen(false);
+    }
+
     useEffect(() => {
         getCategories();
-    }, []);
+    }, [isIncome]);
 
     return (
         <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
@@ -125,11 +134,14 @@ export default function BalanceInput(props: BalanceInput) {
                 className={classes.valueinput}
             />
             <FormControl className={classes.formControl}>
-                <InputLabel id="demo-simple-select-label">Category</InputLabel>
+                <InputLabel id="demo-simple-select-label" className={classes.categoryLabel}>
+                    Category
+                </InputLabel>
                 <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={category.name}
+                    className={classes.select}
                     defaultValue=""
                 >
                     {categoryList.map((data) => {
@@ -140,6 +152,11 @@ export default function BalanceInput(props: BalanceInput) {
                         );
                     })}
                 </Select>
+                <a onClick={handleCategoryCreateClickOpen}>カテゴリを追加する</a>
+                <CategoryCreate
+                    open={categoryCreateOpen}
+                    onClose={handleCategoryCreateClose}
+                />
             </FormControl>
         </Dialog>
     );
