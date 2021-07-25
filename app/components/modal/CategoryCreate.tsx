@@ -14,3 +14,15 @@ import { RepositoryFactory } from "../../repositories/RepositoryFactory";
 const categoryRepository = RepositoryFactory.get("category");
 import FormControl from "@material-ui/core/FormControl";
 
+interface CategoryData {
+    name: string;
+}
+
+const initialCategoryData: CategoryData = {
+    name: "",
+};
+interface CategoryCreateProps {
+    open: boolean;
+    onClose: () => void;
+}
+
