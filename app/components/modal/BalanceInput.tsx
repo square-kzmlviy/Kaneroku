@@ -61,13 +61,17 @@ export default function BalanceInput(props: BalanceInput) {
     const classes = useStyles();
     const [categoryList, setcategoryList] = useState<CategoryData[]>([]);
     const [category, setCategory] = useState<CategoryData>(initialCategoryData);
+    const [balance, setBalance] = useState<CategoryData>(initialCategoryData);
+    const [categoryCreateOpen, setCategoryCreateOpen] = React.useState(false);
     const { onClose, open } = props;
+    const [value, setValue] = useState<number>(0);
+    const [isIncome, setIsIncome] = useState<boolean>(false);
 
     async function getCategories() {
         try {
             const res = await categoryRepository.get<CategoryData>();
             console.log(res);
-            setcategoryList(res.data);
+            setcategoryList(res.data.filter((x) => x.is_income === isIncome));
         } catch (error) {
             const { status, message } = error.response;
             console.log(`Error! HTTP Status: ${status} ${error.response}`);
@@ -80,6 +84,16 @@ export default function BalanceInput(props: BalanceInput) {
         console.log(category);
     }
 
+    function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+        const value = event.target.value;
+        setBalance({ ...balance, [event.target.name]: value });
+    }
+
+    const categoryTypeChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+        setValue(newValue);
+        newValue ? setIsIncome(true) : setIsIncome(false);
+        console.log(isIncome);
+    };
     const handleClose = () => {
         onClose();
     };
@@ -91,6 +105,18 @@ export default function BalanceInput(props: BalanceInput) {
     return (
         <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
             <DialogTitle id="simple-dialog-title">収支登録</DialogTitle>
+            <Paper elevation={0}>
+                <Tabs
+                    value={value}
+                    onChange={categoryTypeChange}
+                    indicatorColor="secondary"
+                    textColor="secondary"
+                    centered
+                >
+                    <Tab label="Expence" />
+                    <Tab label="Income" />
+                </Tabs>
+            </Paper>
             <TextField
                 id="standard-basic"
                 label="name"
