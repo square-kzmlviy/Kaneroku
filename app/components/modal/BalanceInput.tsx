@@ -141,6 +141,7 @@ export default function BalanceInput(props: BalanceInput) {
 
     function handleCategoryCreateClose() {
         setCategoryCreateOpen(false);
+        setCategories();
     }
 
     useEffect(() => {
