@@ -156,6 +156,7 @@ export default function BalanceInput(props: BalanceInput) {
             <Paper elevation={0}>
                 <Tabs
                     value={value}
+                    variant="fullWidth"
                     onChange={categoryTypeChange}
                     indicatorColor="secondary"
                     textColor="secondary"
