@@ -16,6 +16,8 @@ import Tab from "@material-ui/core/Tab";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Fade from "@material-ui/core/Fade";
+import LinearProgress from "@material-ui/core/LinearProgress";
 
 const fullScreen = (theme: Theme) => useMediaQuery(theme.breakpoints.down("xl"));
 const useStyles = makeStyles((theme: Theme) =>
@@ -70,6 +72,8 @@ export default function BalanceInput(props: BalanceInput) {
     const { onClose, open } = props;
     const [value, setValue] = useState<number>(0);
     const [isIncome, setIsIncome] = useState<boolean>(false);
+    const [query, setQuery] = React.useState("idle");
+    const timerRef = React.useRef<number>();
 
     async function getCategories() {
         try {
@@ -83,19 +87,30 @@ export default function BalanceInput(props: BalanceInput) {
     }
 
     async function hundleSubmit() {
-        try {
-            await balanceRepository.createPost({
-                money_balance: {
-                    value: balance.value,
-                    category_id: category.id,
-                },
-            });
+        clearTimeout(timerRef.current);
 
-            handleClose();
-        } catch (error) {
-            const { status, statusText } = error.response;
-            console.log(`Error! HTTP Status: ${status} ${statusText}`);
+        if (query !== "idle") {
+            setQuery("idle");
+            return;
         }
+
+        setQuery("progress");
+        timerRef.current = window.setTimeout(async function api() {
+            setQuery("success");
+            try {
+                await balanceRepository.createPost({
+                    money_balance: {
+                        value: balance.value,
+                        category_id: category.id,
+                    },
+                });
+
+                handleClose();
+            } catch (error) {
+                const { status, statusText } = error.response;
+                console.log(`Error! HTTP Status: ${status} ${statusText}`);
+            }
+        }, 2000);
     }
 
     function hundleClick(data: CategoryData) {
@@ -184,7 +199,17 @@ export default function BalanceInput(props: BalanceInput) {
                     onClose={handleCategoryCreateClose}
                 />
             </FormControl>
-
+            <div>
+                <Fade
+                    in={query === "progress"}
+                    style={{
+                        transitionDelay: "200ms",
+                    }}
+                    unmountOnExit
+                >
+                    <LinearProgress />
+                </Fade>
+            </div>
             <Button variant="contained" color="primary" onClick={hundleSubmit}>
                 登録
             </Button>
