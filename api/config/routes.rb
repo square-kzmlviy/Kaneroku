@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resource :session
   resources :users
   resources :categories
+  resources :money_balances
 end
