@@ -4,6 +4,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Dialog from "@material-ui/core/Dialog";
 import { RepositoryFactory } from "../../repositories/RepositoryFactory";
 const categoryRepository = RepositoryFactory.get("category");
+const balanceRepository = RepositoryFactory.get("balance");
 import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -12,8 +13,11 @@ import CategoryCreate from "./CategoryCreate";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
+const fullScreen = (theme: Theme) => useMediaQuery(theme.breakpoints.down("xl"));
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         formControl: {
@@ -61,7 +65,7 @@ export default function BalanceInput(props: BalanceInput) {
     const classes = useStyles();
     const [categoryList, setcategoryList] = useState<CategoryData[]>([]);
     const [category, setCategory] = useState<CategoryData>(initialCategoryData);
-    const [balance, setBalance] = useState<CategoryData>(initialCategoryData);
+    const [balance, setBalance] = useState<BalanceData>(initialBalanceData);
     const [categoryCreateOpen, setCategoryCreateOpen] = React.useState(false);
     const { onClose, open } = props;
     const [value, setValue] = useState<number>(0);
@@ -75,6 +79,22 @@ export default function BalanceInput(props: BalanceInput) {
         } catch (error) {
             const { status, message } = error.response;
             console.log(`Error! HTTP Status: ${status} ${error.response}`);
+        }
+    }
+
+    async function hundleSubmit() {
+        try {
+            await balanceRepository.createPost({
+                money_balance: {
+                    value: balance.value,
+                    category_id: category.id,
+                },
+            });
+
+            handleClose();
+        } catch (error) {
+            const { status, statusText } = error.response;
+            console.log(`Error! HTTP Status: ${status} ${statusText}`);
         }
     }
 
@@ -112,7 +132,12 @@ export default function BalanceInput(props: BalanceInput) {
     }, [isIncome]);
 
     return (
-        <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
+        <Dialog
+            onClose={handleClose}
+            aria-labelledby="simple-dialog-title"
+            open={open}
+            fullWidth={true}
+        >
             <DialogTitle id="simple-dialog-title">収支登録</DialogTitle>
             <Paper elevation={0}>
                 <Tabs
@@ -128,8 +153,9 @@ export default function BalanceInput(props: BalanceInput) {
             </Paper>
             <TextField
                 id="standard-basic"
-                label="name"
-                name="name"
+                label="value"
+                name="value"
+                type="number"
                 onChange={handleChange}
                 className={classes.valueinput}
             />
@@ -158,6 +184,10 @@ export default function BalanceInput(props: BalanceInput) {
                     onClose={handleCategoryCreateClose}
                 />
             </FormControl>
+
+            <Button variant="contained" color="primary" onClick={hundleSubmit}>
+                登録
+            </Button>
         </Dialog>
     );
 }
