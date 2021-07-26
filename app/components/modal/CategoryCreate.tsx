@@ -12,8 +12,11 @@ import Fade from "@material-ui/core/Fade";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import { RepositoryFactory } from "../../repositories/RepositoryFactory";
 const categoryRepository = RepositoryFactory.get("category");
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import FormControl from "@material-ui/core/FormControl";
+import { useTheme } from "@material-ui/core/styles";
 
+const fullScreen = (theme: Theme) => useMediaQuery(theme.breakpoints.down("lg"));
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         formControl: {
@@ -90,7 +93,12 @@ export default function CategoryCreate(props: CategoryCreateProps) {
     }
 
     return (
-        <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
+        <Dialog
+            onClose={handleClose}
+            aria-labelledby="simple-dialog-title"
+            open={open}
+            fullWidth={true}
+        >
             <DialogTitle id="simple-dialog-title">カテゴリ追加</DialogTitle>
             <Tabs
                 value={value}
