@@ -10,6 +10,11 @@ class CategoriesController < ApplicationController
   def create
     if current_user
 		category = Category.new(category_create_params)
+		if category.save
+			render json: { category: category }, status: :created
+		  else
+			render  status: :bad_request
+		  end
 	  else
 		render json: { data: [], message: 'ユーザーが存在しません' }, status: :no_content
 	  end
