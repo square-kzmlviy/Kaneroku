@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import { useGetLogInUser } from "../../components/hooks/useGetLogInUser";
+import { useGetLogInUser } from "../hooks/useGetLogInUser";
 import style from "../../styles/header.module.css";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 export default function Header() {
