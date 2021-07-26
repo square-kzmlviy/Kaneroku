@@ -1,5 +1,5 @@
 import Repository from "./Repository";
-const resource: string = "/balances";
+const resource: string = "/money_balances";
 export default {
     get() {
         return Repository.get(`${resource}`);
