@@ -19,6 +19,7 @@ import Button from "@material-ui/core/Button";
 import Fade from "@material-ui/core/Fade";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import style from "../../styles/balance_modal.module.css";
+import { useGetCategories } from "../hooks/useGetCategories";
 
 const fullScreen = (theme: Theme) => useMediaQuery(theme.breakpoints.down("xl"));
 const useStyles = makeStyles((theme: Theme) =>
@@ -76,15 +77,11 @@ export default function BalanceInput(props: BalanceInput) {
     const [query, setQuery] = React.useState("idle");
     const timerRef = React.useRef<number>();
 
-    async function getCategories() {
-        try {
-            const res = await categoryRepository.get<CategoryData>();
-            console.log(res);
-            setcategoryList(res.data.filter((x) => x.is_income === isIncome));
-        } catch (error) {
-            const { status, message } = error.response;
-            console.log(`Error! HTTP Status: ${status} ${error.response}`);
-        }
+    const { getCategories, categories } = useGetCategories();
+
+    function setCategories() {
+        getCategories(isIncome);
+        setcategoryList(categories);
     }
 
     async function hundleSubmit() {
@@ -145,7 +142,7 @@ export default function BalanceInput(props: BalanceInput) {
     }
 
     useEffect(() => {
-        getCategories();
+        setCategories();
     }, [isIncome]);
 
     return (
@@ -187,7 +184,7 @@ export default function BalanceInput(props: BalanceInput) {
                     className={classes.select}
                     defaultValue=""
                 >
-                    {categoryList.map((data) => {
+                    {categories.map((data) => {
                         return (
                             <MenuItem value={data.name} onClick={() => hundleClick(data)}>
                                 {data.name}
