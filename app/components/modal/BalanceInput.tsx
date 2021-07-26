@@ -18,6 +18,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Fade from "@material-ui/core/Fade";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import style from "../../styles/balance_modal.module.css";
 
 const fullScreen = (theme: Theme) => useMediaQuery(theme.breakpoints.down("xl"));
 const useStyles = makeStyles((theme: Theme) =>
@@ -193,7 +194,12 @@ export default function BalanceInput(props: BalanceInput) {
                         );
                     })}
                 </Select>
-                <a onClick={handleCategoryCreateClickOpen}>カテゴリを追加する</a>
+                <a
+                    onClick={handleCategoryCreateClickOpen}
+                    className={style.category_create_link}
+                >
+                    カテゴリを追加する
+                </a>
                 <CategoryCreate
                     open={categoryCreateOpen}
                     onClose={handleCategoryCreateClose}
