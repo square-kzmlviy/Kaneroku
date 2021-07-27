@@ -50,6 +50,7 @@ export default function CategoryCreate(props: CategoryCreateProps) {
     const { onClose, open } = props;
     const [query, setQuery] = React.useState("idle");
     const timerRef = React.useRef<number>();
+    const [inputError, setInputError] = useState(false);
 
     const handleClose = () => {
         onClose();
@@ -88,6 +89,7 @@ export default function CategoryCreate(props: CategoryCreateProps) {
             } catch (error) {
                 const { status, message } = error.response;
                 console.log(`Error! HTTP Status: ${status} ${error.response}`);
+                setInputError(true);
             }
         }, 2000);
     }
@@ -117,6 +119,7 @@ export default function CategoryCreate(props: CategoryCreateProps) {
                     label="name"
                     name="name"
                     onChange={handleChange}
+                    error={inputError}
                 />
 
                 <div>

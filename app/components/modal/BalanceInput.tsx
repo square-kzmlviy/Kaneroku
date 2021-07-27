@@ -76,6 +76,8 @@ export default function BalanceInput(props: BalanceInput) {
     const [isIncome, setIsIncome] = useState<boolean>(false);
     const [query, setQuery] = React.useState("idle");
     const timerRef = React.useRef<number>();
+    const inputRef = React.useRef(null);
+    const [inputError, setInputError] = useState(false);
 
     const { getCategories, categories } = useGetCategories();
 
@@ -107,6 +109,7 @@ export default function BalanceInput(props: BalanceInput) {
             } catch (error) {
                 const { status, statusText } = error.response;
                 console.log(`Error! HTTP Status: ${status} ${statusText}`);
+                setInputError(true);
             }
         }, 2000);
     }
@@ -118,6 +121,14 @@ export default function BalanceInput(props: BalanceInput) {
     }
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+        if (inputRef.current) {
+            const ref = inputRef.current;
+            if (!ref.validity.valid) {
+                setInputError(true);
+            } else {
+                setInputError(false);
+            }
+        }
         const value = event.target.value;
         setBalance({ ...balance, [event.target.name]: value });
     }
@@ -173,6 +184,10 @@ export default function BalanceInput(props: BalanceInput) {
                 type="number"
                 onChange={handleChange}
                 className={classes.valueinput}
+                error={inputError}
+                inputProps={{ minLength: 1, pattern: "^[a-zA-Z0-9_]+$" }}
+                inputRef={inputRef}
+                value={balance.value}
             />
             <FormControl className={classes.formControl}>
                 <InputLabel id="demo-simple-select-label" className={classes.categoryLabel}>
@@ -184,6 +199,7 @@ export default function BalanceInput(props: BalanceInput) {
                     value={category.name}
                     className={classes.select}
                     defaultValue=""
+                    error={inputError}
                 >
                     {categories.map((data) => {
                         return (
