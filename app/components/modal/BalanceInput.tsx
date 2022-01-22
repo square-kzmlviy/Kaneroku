@@ -21,7 +21,8 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import style from "../../styles/balance_modal.module.css";
 import { useGetCategories } from "../hooks/useGetCategories";
 
-const fullScreen = (theme: Theme) => useMediaQuery(theme.breakpoints.down("xl"));
+const fullScreen = (theme: Theme) =>
+    useMediaQuery(theme.breakpoints.down("xl"));
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         formControl: {
@@ -42,6 +43,24 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
+var date = new Date();
+var year = date.getFullYear();
+var month = date.getMonth() + 1;
+var day = date.getDate();
+
+var toTwoDigits = function (num, digit) {
+    num += "";
+    if (num.length < digit) {
+        num = "0" + num;
+    }
+    return num;
+};
+
+var yyyy = toTwoDigits(year, 4);
+var mm = toTwoDigits(month, 2);
+var dd = toTwoDigits(day, 2);
+var ymd = yyyy + "-" + mm + "-" + dd;
+
 interface CategoryData {
     name: string;
     id: number;
@@ -49,6 +68,7 @@ interface CategoryData {
 
 interface BalanceData {
     value: number;
+    date: string;
 }
 
 const initialCategoryData: CategoryData = {
@@ -58,6 +78,7 @@ const initialCategoryData: CategoryData = {
 
 const initialBalanceData: BalanceData = {
     value: 0,
+    date: ymd,
 };
 
 interface BalanceInput {
@@ -67,6 +88,7 @@ interface BalanceInput {
 
 export default function BalanceInput(props: BalanceInput) {
     const classes = useStyles();
+
     const [categoryList, setcategoryList] = useState<CategoryData[]>([]);
     const [category, setCategory] = useState<CategoryData>(initialCategoryData);
     const [balance, setBalance] = useState<BalanceData>(initialBalanceData);
@@ -101,6 +123,7 @@ export default function BalanceInput(props: BalanceInput) {
                 await balanceRepository.createPost({
                     money_balance: {
                         value: balance.value,
+                        date: balance.date,
                         category_id: category.id,
                     },
                 });
@@ -133,7 +156,10 @@ export default function BalanceInput(props: BalanceInput) {
         setBalance({ ...balance, [event.target.name]: value });
     }
 
-    const categoryTypeChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+    const categoryTypeChange = (
+        event: React.ChangeEvent<{}>,
+        newValue: number
+    ) => {
         setValue(newValue);
         newValue ? setIsIncome(true) : setIsIncome(false);
         console.log(isIncome);
@@ -177,6 +203,7 @@ export default function BalanceInput(props: BalanceInput) {
                     <Tab label="Income" />
                 </Tabs>
             </Paper>
+            <input type="date" value={balance.date} />
             <TextField
                 id="standard-basic"
                 label="value"
@@ -190,7 +217,10 @@ export default function BalanceInput(props: BalanceInput) {
                 value={balance.value}
             />
             <FormControl className={classes.formControl}>
-                <InputLabel id="demo-simple-select-label" className={classes.categoryLabel}>
+                <InputLabel
+                    id="demo-simple-select-label"
+                    className={classes.categoryLabel}
+                >
                     Category
                 </InputLabel>
                 <Select
@@ -203,7 +233,10 @@ export default function BalanceInput(props: BalanceInput) {
                 >
                     {categories.map((data) => {
                         return (
-                            <MenuItem value={data.name} onClick={() => hundleClick(data)}>
+                            <MenuItem
+                                value={data.name}
+                                onClick={() => hundleClick(data)}
+                            >
                                 {data.name}
                             </MenuItem>
                         );

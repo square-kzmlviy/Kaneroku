@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-category_icon_11">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="category_icon_11" clip-path="url(#clip-category_icon_11)">
+    <circle id="楕円形_6" data-name="楕円形 6" cx="96.5" cy="96.5" r="96.5" transform="translate(4 4)" fill="#fc76b9"/>
+    <g id="ハートのマーク" transform="translate(31.382 20.056)">
+      <path id="パス_131" data-name="パス 131" d="M102.024,32.177c-20.9.4-31.136,15.2-33.406,28.648-2.27-13.451-12.5-28.246-33.406-28.648C15.938,31.807,0,46.633,0,73.692c0,34.735,39.29,50.78,66.157,76.727.935.9.715.88.715.88a2.251,2.251,0,0,0,1.743.86v0h.006v0a2.251,2.251,0,0,0,1.743-.86s-.22.023.715-.88c26.867-25.946,66.157-41.992,66.157-76.727C137.237,46.633,121.3,31.807,102.024,32.177Z" transform="translate(0 0)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

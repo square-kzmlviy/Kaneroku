@@ -25,7 +25,8 @@ const userInitialData: UserData = {
 
 export default function sign_up() {
     const [userData, setUserData] = useState<UserData>(userInitialData);
-    const { getLogInUser, loginUserName, loginStatus, loginUserId } = useGetLogInUser();
+    const { getLogInUser, loginUserName, loginStatus, loginUserId } =
+        useGetLogInUser();
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
         const value = event.target.value;
@@ -44,10 +45,10 @@ export default function sign_up() {
             });
             console.log(`Logaut: ${status} `);
             getLogInUser();
-            Router.push("/");
+            Router.push("/balance/home");
         } catch (error) {
             const { status, message } = error.response;
-            console.log(`Error! HTTP Status: ${status} ${error.response}`);
+            console.log(`Error! HTTP Status: ${status} ${error}`);
         }
     }
 
@@ -87,7 +88,11 @@ export default function sign_up() {
                     autoComplete="current-password"
                     onChange={handleChange}
                 />
-                <Button variant="contained" color="primary" onClick={signUpClick}>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={signUpClick}
+                >
                     signup
                 </Button>
             </form>
