@@ -3,7 +3,13 @@
 class MoneyBalancesController < ApplicationController
   def index
     if current_user
-      money_balances = current_user.money_balances.joins(:category).select('money_balances.id,money_balances.value,categories.name,money_balances.date')
+      money_balances = current_user.money_balances
+                                   .left_joins(category: :category_icon)
+                                   .select('money_balances.id,
+                                            money_balances.value,
+                                            categories.name,
+                                            money_balances.date,
+                                            category_icons.img_path')
       render json: money_balances, status: :ok
     else
       render json: { data: [], message: 'ユーザーが存在しません' }, status: :no_content

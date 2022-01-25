@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_21_140707) do
+ActiveRecord::Schema.define(version: 2022_01_25_023107) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -18,7 +18,15 @@ ActiveRecord::Schema.define(version: 2022_01_21_140707) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_icon_id"
+    t.index ["category_icon_id"], name: "index_categories_on_category_icon_id"
     t.index ["user_id"], name: "index_categories_on_user_id"
+  end
+
+  create_table "category_icons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "img_path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "money_balances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -40,6 +48,7 @@ ActiveRecord::Schema.define(version: 2022_01_21_140707) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "categories", "category_icons"
   add_foreign_key "categories", "users"
   add_foreign_key "money_balances", "categories"
   add_foreign_key "money_balances", "users"

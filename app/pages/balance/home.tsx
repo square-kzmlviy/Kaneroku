@@ -29,6 +29,14 @@ export default function Home() {
                         {data.name}
                         {data.value}
                         {data.date}
+                        <img
+                            width="10%"
+                            src={
+                                data.img_path
+                                    ? `/static/${data.img_path}.svg`
+                                    : `/static/category_icon_0.svg`
+                            }
+                        />
                     </div>
                 );
             })}

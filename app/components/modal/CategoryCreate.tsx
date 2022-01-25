@@ -15,8 +15,12 @@ const categoryRepository = RepositoryFactory.get("category");
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import FormControl from "@material-ui/core/FormControl";
 import { useTheme } from "@material-ui/core/styles";
+import { useGetCategoryIcons } from "../hooks/useGetCategoryIcons";
+import style from "../../styles/category_modal.module.css";
+import { StylesContext } from "@material-ui/styles";
 
-const fullScreen = (theme: Theme) => useMediaQuery(theme.breakpoints.down("lg"));
+const fullScreen = (theme: Theme) =>
+    useMediaQuery(theme.breakpoints.down("lg"));
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         formControl: {
@@ -46,11 +50,14 @@ export default function CategoryCreate(props: CategoryCreateProps) {
     const [category, setCategory] = useState<CategoryData>(initialCategoryData);
     const [categoryCreateOpen, setCategoryCreateOpen] = React.useState(false);
     const [value, setValue] = useState<number>(0);
+    const [selectedCategoryIconId, setSelectedCategoryIconId] =
+        useState<number>(0);
     const [isIncome, setIsIncome] = useState<boolean>(false);
     const { onClose, open } = props;
     const [query, setQuery] = React.useState("idle");
     const timerRef = React.useRef<number>();
     const [inputError, setInputError] = useState(false);
+    const { getCategoryIcons, categoryIcons } = useGetCategoryIcons();
 
     const handleClose = () => {
         onClose();
@@ -60,11 +67,18 @@ export default function CategoryCreate(props: CategoryCreateProps) {
         const value = event.target.value;
         setCategory({ ...category, [event.target.name]: value });
     }
-    const categoryTypeChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+    const categoryTypeChange = (
+        event: React.ChangeEvent<{}>,
+        newValue: number
+    ) => {
         setValue(newValue);
         newValue ? setIsIncome(true) : setIsIncome(false);
         console.log(isIncome);
     };
+
+    useEffect(() => {
+        getCategoryIcons();
+    }, []);
 
     async function categoryCreateClick() {
         clearTimeout(timerRef.current);
@@ -82,6 +96,7 @@ export default function CategoryCreate(props: CategoryCreateProps) {
                     category: {
                         name: category.name,
                         is_income: isIncome,
+                        category_icon_id: selectedCategoryIconId,
                     },
                 });
                 console.log(`Logaut: ${status} `);
@@ -92,6 +107,10 @@ export default function CategoryCreate(props: CategoryCreateProps) {
                 setInputError(true);
             }
         }, 2000);
+    }
+
+    function hundleIconClick(id) {
+        setSelectedCategoryIconId(id);
     }
 
     return (
@@ -121,6 +140,23 @@ export default function CategoryCreate(props: CategoryCreateProps) {
                     onChange={handleChange}
                     error={inputError}
                 />
+
+                <div className={style.icon_container}>
+                    {categoryIcons.map((data) => {
+                        return (
+                            <img
+                                width="25%"
+                                src={`/static/${data.img_path}.svg`}
+                                onClick={() => hundleIconClick(data.id)}
+                                className={
+                                    data.id == selectedCategoryIconId
+                                        ? style.selected_icon
+                                        : style.non_selected_icon
+                                }
+                            />
+                        );
+                    })}
+                </div>
 
                 <div>
                     <Fade

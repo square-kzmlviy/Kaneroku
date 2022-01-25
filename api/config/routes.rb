@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :users
   resources :categories
   resources :money_balances
+  resources :category_icons
 end

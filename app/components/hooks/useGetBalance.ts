@@ -6,6 +6,7 @@ interface BalanceyData {
     id: number;
     value: number;
     date: string;
+    img_path: string;
 }
 export function useGetBalance() {
     const [balance, setBalance] = useState<BalanceyData[]>([]);

@@ -21,6 +21,6 @@ class CategoriesController < ApplicationController
   end
 
   def category_create_params
-    params.require(:category).permit(:name, :is_income).merge(user_id: current_user.id)
+    params.require(:category).permit(:name, :is_income, :category_icon_id).merge(user_id: current_user.id)
   end
 end

@@ -100,7 +100,6 @@ export default function BalanceInput(props: BalanceInput) {
     const timerRef = React.useRef<number>();
     const inputRef = React.useRef(null);
     const [inputError, setInputError] = useState(false);
-
     const { getCategories, categories } = useGetCategories();
 
     function setCategories() {
