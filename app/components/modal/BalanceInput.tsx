@@ -84,6 +84,7 @@ const initialBalanceData: BalanceData = {
 interface BalanceInput {
     open: boolean;
     onClose: () => void;
+    getBalance: () => void;
 }
 
 export default function BalanceInput(props: BalanceInput) {
@@ -126,6 +127,7 @@ export default function BalanceInput(props: BalanceInput) {
                         category_id: category.id,
                     },
                 });
+                props.getBalance();
 
                 handleClose();
             } catch (error) {
@@ -230,11 +232,12 @@ export default function BalanceInput(props: BalanceInput) {
                     defaultValue=""
                     error={inputError}
                 >
-                    {categories.map((data) => {
+                    {categories.map((data, index) => {
                         return (
                             <MenuItem
                                 value={data.name}
                                 onClick={() => hundleClick(data)}
+                                key={index}
                             >
                                 {data.name}
                             </MenuItem>
