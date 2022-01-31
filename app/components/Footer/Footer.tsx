@@ -6,7 +6,9 @@ import { useGetLogInUser } from "../hooks/useGetLogInUser";
 import style from "../../styles/footer.module.css";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
-
+interface FooterProps {
+    handleClickOpen: () => void;
+}
 const useStyles = makeStyles({
     appBar: {
         top: "auto",
@@ -21,13 +23,14 @@ const useStyles = makeStyles({
         margin: "0 auto",
     },
 });
-export default function Footer() {
+export default function Footer(props: FooterProps) {
+    const { handleClickOpen } = props;
     const classes = useStyles();
     return (
         <AppBar position="fixed" color="primary" className={classes.appBar}>
             <Toolbar>
                 <Fab color="secondary" aria-label="add" className={classes.fabButton}>
-                    <AddIcon />
+                    <AddIcon onClick={handleClickOpen} />
                 </Fab>
             </Toolbar>
         </AppBar>

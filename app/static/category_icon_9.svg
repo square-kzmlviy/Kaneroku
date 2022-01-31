@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-category_icon_9">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="category_icon_9" clip-path="url(#clip-category_icon_9)">
+    <circle id="楕円形_6" data-name="楕円形 6" cx="96.5" cy="96.5" r="96.5" transform="translate(4 4)" fill="#a343ea"/>
+    <g id="家の無料アイコン" transform="translate(23.812 -4.291)">
+      <path id="パス_133" data-name="パス 133" d="M131.7,86.982,102.624,57.9,76.188,31.469,49.752,57.9,20.665,87,0,107.657l11.9,11.9L32.56,98.9,61.651,69.8,76.188,55.268,90.724,69.8,119.8,98.882l20.679,20.675,11.9-11.9Z" transform="translate(0 0)" fill="#fff"/>
+      <path id="パス_134" data-name="パス 134" d="M85.719,210.749v44.688h56.257V220.026H162.46v35.411h24.613v-44.7L136.4,160.063Z" transform="translate(-60.208 -90.323)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

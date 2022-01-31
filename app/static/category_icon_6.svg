@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-category_icon_6">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="category_icon_6" clip-path="url(#clip-category_icon_6)">
+    <circle id="楕円形_6" data-name="楕円形 6" cx="96.5" cy="96.5" r="96.5" transform="translate(4 4)" fill="#48ceff"/>
+    <g id="シャープな星の無料アイコン" transform="translate(28.405 14.801)">
+      <path id="パス_130" data-name="パス 130" d="M71.594,12.531,91.464,60.463l51.725,4.086-39.45,33.7,12.1,50.458-44.248-27.1-44.248,27.1,12.1-50.458L0,64.549l51.725-4.086Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

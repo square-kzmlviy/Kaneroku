@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="601" viewBox="0 0 900 601">
+  <defs>
+    <clipPath id="clip-background">
+      <rect width="900" height="601"/>
+    </clipPath>
+  </defs>
+  <g id="background" clip-path="url(#clip-background)">
+    <rect width="900" height="601" fill="#fff"/>
+    <g id="グループ_4" data-name="グループ 4" transform="translate(-2070 -321)">
+      <g id="low-poly-grid-haikei_4_" data-name="low-poly-grid-haikei (4)" transform="translate(2070 322)">
+        <path id="パス_7" data-name="パス 7" d="M419,298l98,63-27-83Z" fill="#f87600" stroke="#f87600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_8" data-name="パス 8" d="M419,298l-36,80,134-17Z" fill="#f86600" stroke="#f86600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_9" data-name="パス 9" d="M468,504,583,373l-66-12Z" fill="#f88000" stroke="#f88000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_10" data-name="パス 10" d="M517,361l117-59L490,278Z" fill="#f88000" stroke="#f88000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_11" data-name="パス 11" d="M634,302,518,198l-28,80Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_12" data-name="パス 12" d="M490,278,372,207l47,91Z" fill="#f87600" stroke="#f87600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_13" data-name="パス 13" d="M518,198l-146,9,118,71Z" fill="#f88000" stroke="#f88000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_14" data-name="パス 14" d="M419,298,280,311l103,67Z" fill="#f76000" stroke="#f76000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_15" data-name="パス 15" d="M583,373l51-71L517,361Z" fill="#f86600" stroke="#f86600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_16" data-name="パス 16" d="M383,378l85,126,49-143Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_17" data-name="パス 17" d="M372,207,280,311l139-13Z" fill="#f86b00" stroke="#f86b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_18" data-name="パス 18" d="M383,378l52,141,33-15Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_19" data-name="パス 19" d="M293,418,435,519,383,378Z" fill="#f86b00" stroke="#f86b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_20" data-name="パス 20" d="M280,311l13,107,90-40Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_21" data-name="パス 21" d="M363,66,314,209l58-2Z" fill="#f87100" stroke="#f87100" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_22" data-name="パス 22" d="M372,207l-58,2L280,311Z" fill="#f88f00" stroke="#f88f00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_23" data-name="パス 23" d="M634,302,567,162l-49,36Z" fill="#f88500" stroke="#f88500" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_24" data-name="パス 24" d="M518,198l-46-90L372,207Z" fill="#f87100" stroke="#f87100" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_25" data-name="パス 25" d="M567,162l-95-54,46,90Z" fill="#f88500" stroke="#f88500" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_26" data-name="パス 26" d="M681,187l-88-55-26,30Z" fill="#f86600" stroke="#f86600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_27" data-name="パス 27" d="M567,162l26-30L472,108Z" fill="#f75a00" stroke="#f75a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_28" data-name="パス 28" d="M636,516l30-41L583,373Z" fill="#f75a00" stroke="#f75a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_29" data-name="パス 29" d="M583,373l142-6-91-65Z" fill="#f88f00" stroke="#f88f00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_30" data-name="パス 30" d="M636,516,583,373,468,504Z" fill="#f88a00" stroke="#f88a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_31" data-name="パス 31" d="M564,600l72-84L468,504Z" fill="#f87100" stroke="#f87100" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_32" data-name="パス 32" d="M634,302l47-115L567,162Z" fill="#f88000" stroke="#f88000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_33" data-name="パス 33" d="M734,281l-53-94L634,302Z" fill="#f88a00" stroke="#f88a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_34" data-name="パス 34" d="M666,475l59-108-142,6Z" fill="#f86b00" stroke="#f86b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_35" data-name="パス 35" d="M293,418l-6,104,148-3Z" fill="#f88000" stroke="#f88000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_36" data-name="パス 36" d="M435,519l67,81-34-96Z" fill="#f75a00" stroke="#f75a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_37" data-name="パス 37" d="M191,481l96,41,6-104Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_38" data-name="パス 38" d="M395,600H502l-67-81Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_39" data-name="パス 39" d="M725,367l9-86L634,302Z" fill="#f86600" stroke="#f86600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_40" data-name="パス 40" d="M187,236l6,96,87-21Z" fill="#f87600" stroke="#f87600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_41" data-name="パス 41" d="M280,311,204,417l89,1Z" fill="#f88f00" stroke="#f88f00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_42" data-name="パス 42" d="M193,332l11,85,76-106Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_43" data-name="パス 43" d="M287,522l108,78,40-81Z" fill="#f88500" stroke="#f88500" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_44" data-name="パス 44" d="M472,108,363,66l9,141Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_45" data-name="パス 45" d="M314,209,187,236l93,75Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_46" data-name="パス 46" d="M412,0,363,66l109,42Z" fill="#f88a00" stroke="#f88a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_47" data-name="パス 47" d="M502,600h62l-96-96Z" fill="#f87100" stroke="#f87100" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_48" data-name="パス 48" d="M184,87l3,149,127-27Z" fill="#f88a00" stroke="#f88a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_49" data-name="パス 49" d="M108,321l96,96-11-85Z" fill="#f88500" stroke="#f88500" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_50" data-name="パス 50" d="M77,439l114,42,13-64Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_51" data-name="パス 51" d="M204,417l-13,64,102-63Z" fill="#f86b00" stroke="#f86b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_52" data-name="パス 52" d="M287,522l9,78h99Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_53" data-name="パス 53" d="M160,600H296l-9-78Z" fill="#f88a00" stroke="#f88a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_54" data-name="パス 54" d="M681,187l8-97-96,42Z" fill="#f88f00" stroke="#f88f00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_55" data-name="パス 55" d="M525,0H412l60,108Z" fill="#f87100" stroke="#f87100" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_56" data-name="パス 56" d="M820,132,689,90l-8,97Z" fill="#f88500" stroke="#f88500" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_57" data-name="パス 57" d="M525,0,472,108l121,24Z" fill="#f87100" stroke="#f87100" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_58" data-name="パス 58" d="M363,66l-96-5,47,148Z" fill="#f86b00" stroke="#f86b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_59" data-name="パス 59" d="M332,0,267,61l96,5Z" fill="#f86b00" stroke="#f86b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_60" data-name="パス 60" d="M628,0H525l68,132Z" fill="#f88500" stroke="#f88500" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_61" data-name="パス 61" d="M729,600l40-114L666,475Z" fill="#f88000" stroke="#f88000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_62" data-name="パス 62" d="M666,475l103,11L725,367Z" fill="#f75a00" stroke="#f75a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_63" data-name="パス 63" d="M839,287l-36-62-69,56Z" fill="#f76000" stroke="#f76000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_64" data-name="パス 64" d="M729,600,666,475l-30,41Z" fill="#f88a00" stroke="#f88a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_65" data-name="パス 65" d="M734,281l69-56L681,187Z" fill="#f75a00" stroke="#f75a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_66" data-name="パス 66" d="M839,287l-105-6-9,86Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_67" data-name="パス 67" d="M412,0H332l31,66Z" fill="#f88000" stroke="#f88000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_68" data-name="パス 68" d="M97,210l11,111,79-85Z" fill="#f86b00" stroke="#f86b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_69" data-name="パス 69" d="M187,236l-79,85,85,11Z" fill="#f88a00" stroke="#f88a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_70" data-name="パス 70" d="M689,90,628,0,593,132Z" fill="#f76000" stroke="#f76000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_71" data-name="パス 71" d="M676,0H628l61,90Z" fill="#f87600" stroke="#f87600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_72" data-name="パス 72" d="M232,0,184,87l83-26Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_73" data-name="パス 73" d="M267,61,184,87,314,209Z" fill="#f86600" stroke="#f86600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_74" data-name="パス 74" d="M835,409l4-122L725,367Z" fill="#f87100" stroke="#f87100" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_75" data-name="パス 75" d="M564,600H729l-93-84Z" fill="#f88000" stroke="#f88000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_76" data-name="パス 76" d="M769,486l66-77L725,367Z" fill="#f88000" stroke="#f88000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_77" data-name="パス 77" d="M900,486l-65-77-66,77Z" fill="#f87100" stroke="#f87100" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_78" data-name="パス 78" d="M108,116,97,210l90,26Z" fill="#f86600" stroke="#f86600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_79" data-name="パス 79" d="M820,132,681,187l122,38Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_80" data-name="パス 80" d="M765,0H676l13,90Z" fill="#f86600" stroke="#f86600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_81" data-name="パス 81" d="M108,321,77,439l127-22Z" fill="#f87600" stroke="#f87600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_82" data-name="パス 82" d="M191,481,160,600l127-78Z" fill="#f88a00" stroke="#f88a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_83" data-name="パス 83" d="M0,360l77,79,31-118Z" fill="#f88f00" stroke="#f88f00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_84" data-name="パス 84" d="M900,224l-80-92-17,93Z" fill="#f86600" stroke="#f86600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_85" data-name="パス 85" d="M332,0H232l35,61Z" fill="#f75a00" stroke="#f75a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_86" data-name="パス 86" d="M184,87l-76,29,79,120Z" fill="#f88f00" stroke="#f88f00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_87" data-name="パス 87" d="M121,600h39l31-119Z" fill="#f76000" stroke="#f76000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_88" data-name="パス 88" d="M137,0,108,116l76-29Z" fill="#f86600" stroke="#f86600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_89" data-name="パス 89" d="M729,600h69L769,486Z" fill="#f88000" stroke="#f88000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_90" data-name="パス 90" d="M77,439l-6,73,120-31Z" fill="#f86b00" stroke="#f86b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_91" data-name="パス 91" d="M835,409l65-23-61-99Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_92" data-name="パス 92" d="M839,287l61-63-97,1Z" fill="#f76000" stroke="#f76000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_93" data-name="パス 93" d="M900,486V386l-65,23Z" fill="#f75a00" stroke="#f75a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_94" data-name="パス 94" d="M71,512l50,88,70-119Z" fill="#f88a00" stroke="#f88a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_95" data-name="パス 95" d="M900,386V261l-61,26Z" fill="#f88f00" stroke="#f88f00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_96" data-name="パス 96" d="M900,0H765l55,132Z" fill="#f75a00" stroke="#f75a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_97" data-name="パス 97" d="M820,132,765,0,689,90Z" fill="#f86600" stroke="#f86600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_98" data-name="パス 98" d="M900,261V224l-61,63Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_99" data-name="パス 99" d="M798,600,900,486H769Z" fill="#f76000" stroke="#f76000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_100" data-name="パス 100" d="M232,0H137l47,87Z" fill="#f88500" stroke="#f88500" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_101" data-name="パス 101" d="M77,439,0,533l71-21Z" fill="#f87b00" stroke="#f87b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_102" data-name="パス 102" d="M0,285v75l108-39Z" fill="#f86b00" stroke="#f86b00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_103" data-name="パス 103" d="M0,285l108,36L97,210Z" fill="#f87600" stroke="#f87600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_104" data-name="パス 104" d="M0,285l97-75L0,162Z" fill="#f76000" stroke="#f76000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_105" data-name="パス 105" d="M0,162l97,48,11-94Z" fill="#f87600" stroke="#f87600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_106" data-name="パス 106" d="M900,224V127l-80,5Z" fill="#f87600" stroke="#f87600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_107" data-name="パス 107" d="M0,123v39l108-46Z" fill="#f76000" stroke="#f76000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_108" data-name="パス 108" d="M0,360V533l77-94Z" fill="#f88000" stroke="#f88000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_109" data-name="パス 109" d="M71,512,0,600H121Z" fill="#f86600" stroke="#f86600" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_110" data-name="パス 110" d="M798,600H900V486Z" fill="#f88f00" stroke="#f88f00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_111" data-name="パス 111" d="M0,0V123l108-7Z" fill="#f87100" stroke="#f87100" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_112" data-name="パス 112" d="M0,533v67l71-88Z" fill="#f75a00" stroke="#f75a00" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_113" data-name="パス 113" d="M900,127V0L820,132Z" fill="#f76000" stroke="#f76000" stroke-linejoin="bevel" stroke-width="1"/>
+        <path id="パス_114" data-name="パス 114" d="M137,0H0L108,116Z" fill="#f88500" stroke="#f88500" stroke-linejoin="bevel" stroke-width="1"/>
+      </g>
+      <g id="stacked-waves-haikei" transform="translate(2070 321)" opacity="0.743">
+        <path id="パス_115" data-name="パス 115" d="M0,163l25,6c25,6,75,18,125,13s100-27,150-43,100-26,150-26,100,10,150,14,100,2,150,3,100,5,125,7l25,2V0H0Z" fill="#f88f00"/>
+        <path id="パス_116" data-name="パス 116" d="M0,199l25,4c25,4,75,12,125,6s100-26,150-40a651.318,651.318,0,0,1,150-24c50-2,100,2,150,5s100,5,150,10,100,13,125,17l25,4V137l-25-2c-25-2-75-6-125-7s-100,1-150-3-100-14-150-14-100,10-150,26-100,38-150,43S50,173,25,167L0,161Z" fill="#f99808"/>
+        <path id="パス_117" data-name="パス 117" d="M0,289H25c25,0,75,0,125-7s100-21,150-37,100-34,150-44,100-12,150-8,100,14,150,20,100,8,125,9l25,1V179l-25-4c-25-4-75-12-125-17s-100-7-150-10-100-7-150-5a651.318,651.318,0,0,0-150,24c-50,14-100,34-150,40s-100-2-125-6L0,197Z" fill="#faa011"/>
+        <path id="パス_118" data-name="パス 118" d="M0,319l25-1c25-1,75-3,125-11s100-22,150-37,100-31,150-40a539.619,539.619,0,0,1,150-6c50,5,100,17,150,26s100,15,125,18l25,3V221l-25-1c-25-1-75-3-125-9s-100-16-150-20-100-2-150,8-100,28-150,44-100,30-150,37-100,7-125,7H0Z" fill="#fca91a"/>
+        <path id="パス_119" data-name="パス 119" d="M0,421l25-8c25-8,75-24,125-34s100-14,150-6,100,28,150,44,100,28,150,27,100-15,150-23,100-10,125-11l25-1V269l-25-3c-25-3-75-9-125-18s-100-21-150-26a539.619,539.619,0,0,0-150,6c-50,9-100,25-150,40s-100,29-150,37S50,315,25,316L0,317Z" fill="#fcb122"/>
+        <path id="パス_120" data-name="パス 120" d="M0,517l25-2c25-2,75-6,125-15s100-23,150-18,100,29,150,38,100,3,150-7,100-24,150-30,100-4,125-3l25,1V407l-25,1c-25,1-75,3-125,11s-100,22-150,23-100-11-150-27-100-36-150-44-100-4-150,6S50,403,25,411L0,419Z" fill="#fdb92a"/>
+        <path id="パス_121" data-name="パス 121" d="M0,565H25c25,0,75,0,125-5s100-15,150-13,100,16,150,18,100-8,150-12,100-2,150-2,100-2,125-3l25-1V479l-25-1c-25-1-75-3-125,3s-100,20-150,30-100,16-150,7-100-33-150-38-100,9-150,18S50,511,25,513L0,515Z" fill="#fec132"/>
+        <path id="パス_122" data-name="パス 122" d="M0,601H900V545l-25,1c-25,1-75,3-125,3s-100-2-150,2-100,14-150,12-100-16-150-18-100,8-150,13-100,5-125,5H0Z" fill="#ffc93a"/>
+      </g>
+    </g>
+  </g>
+</svg>

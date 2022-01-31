@@ -10,13 +10,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: login_user[:email])
-               .authenticate(login_user[:password_digest])
-    if user
-      log_in(user)
+    @user = User.find_by(email: login_user[:email])
+    if @user
+      @user = @user.authenticate(login_user[:password_digest])
+      if @user
+        log_in
+      else
+        render json:{message:"パスワードが違う"},status: :not_found
+      end
     else
-      render status: :not_found
+      render json:{message:"登録されていないemailアドレス"},status: :not_found
     end
+    
   end
   wrap_parameters :user
 
