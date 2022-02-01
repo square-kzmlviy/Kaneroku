@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseDomein: string = "http://localhost:3000";
+const baseDomein: string = process.env.HOST;
 export default axios.create({
     baseURL: baseDomein,
     withCredentials: true,
