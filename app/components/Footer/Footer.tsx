@@ -13,6 +13,7 @@ const useStyles = makeStyles({
     appBar: {
         top: "auto",
         bottom: 0,
+        height: "7vh",
     },
     fabButton: {
         position: "absolute",
@@ -29,7 +30,11 @@ export default function Footer(props: FooterProps) {
     return (
         <AppBar position="fixed" color="primary" className={classes.appBar}>
             <Toolbar>
-                <Fab color="secondary" aria-label="add" className={classes.fabButton}>
+                <Fab
+                    color="secondary"
+                    aria-label="add"
+                    className={classes.fabButton}
+                >
                     <AddIcon onClick={handleClickOpen} />
                 </Fab>
             </Toolbar>
