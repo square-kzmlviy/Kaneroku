@@ -169,6 +169,7 @@ export default function CategoryCreate(props: CategoryCreateProps) {
                         <LinearProgress />
                     </Fade>
                 </div>
+
                 <Button onClick={categoryCreateClick}>カテゴリ作成</Button>
             </FormControl>
         </Dialog>

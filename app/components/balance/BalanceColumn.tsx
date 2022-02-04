@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useGetLogInUser } from "../hooks/useGetLogInUser";
-import style from "../../styles/header.module.css";
-export default function BalanceContainer(props) {
-    const { getLogInUser, loginUserName, loginStatus, loginUserId } =
-        useGetLogInUser();
-    useEffect(() => {
-        getLogInUser();
-    }, []);
+import style from "./BalanceColumn.module.css";
+export default function BalanceColumn(props) {
     return (
-        <div>
+        <div className={style.container}>
             <img
                 width="10%"
                 src={
@@ -17,9 +12,8 @@ export default function BalanceContainer(props) {
                         : `/static/category_icon_0.svg`
                 }
             />
-            {props.data.name}
-            {props.data.value}
-            {props.data.date}
+            <div className={style.name}>{props.data.name}</div>
+            <div className={style.value}>{`${props.data.value}円`}</div>
         </div>
     );
 }
