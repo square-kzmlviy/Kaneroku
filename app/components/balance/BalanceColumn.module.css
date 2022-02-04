@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1vh;
+    height: 6vh;
+    border-bottom: solid 1px #eee;
+    font-size: 20px;
+    color: #333;
+    padding-left: 2vw;
+}
+.name {
+    margin-left: 2vw;
+}
+.value {
+    margin-left: auto;
+    margin-right: 3vw;
+}

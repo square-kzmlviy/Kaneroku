@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import BalanceInput from "../../components/modal/BalanceInput";
@@ -17,7 +17,7 @@ export default function Home() {
     function handleClose() {
         setOpen(false);
     }
-    useEffect(() => {
+    useLayoutEffect(() => {
         getBalance();
     }, []);
     return (
