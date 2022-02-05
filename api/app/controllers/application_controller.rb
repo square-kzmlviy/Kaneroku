@@ -4,9 +4,9 @@ class ApplicationController < ActionController::API
   include ActionController::Cookies
   before_action :current_user
   def current_user
-    if session[:user_id]
+    if cookies.permanent.signed[:user_id]
       if @current_user.nil?
-        @current_user = User.find_by(id: session[:user_id])
+        @current_user = User.find_by(id: cookies.permanent.signed[:user_id])
       else
         @current_user
       end
@@ -14,10 +14,10 @@ class ApplicationController < ActionController::API
   end
 
   def log_in
-    session[:user_id] = @user.id
+    cookies.permanent.signed[:user_id] = @user.id
   end
 
   def log_out
-    session[:user_id] = nil
+    cookies.permanent.signed[:user_id] = nil
   end
 end
