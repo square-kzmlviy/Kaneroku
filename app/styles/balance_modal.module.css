@@ -8,10 +8,13 @@
     display: flex;
     flex-wrap: wrap;
     margin-left: 5%;
+    margin-bottom: 2vh;
 }
 .number_key {
     width: 33%;
     height: 10vh;
-    border: solid 0.5px#ddd;
+    border: solid 0.5px#eeedff;
     background-color: #fff;
+    font-size: 31px;
+    color: #403e9f;
 }

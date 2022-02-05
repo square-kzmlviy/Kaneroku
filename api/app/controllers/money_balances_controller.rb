@@ -10,6 +10,7 @@ class MoneyBalancesController < ApplicationController
                                             categories.name,
                                             money_balances.date,
                                             category_icons.img_path')
+                                            .order('money_balances.date DESC')
       render json: money_balances, status: :ok
     else
       render json: { data: [], message: 'ユーザーが存在しません' }, status: :no_content

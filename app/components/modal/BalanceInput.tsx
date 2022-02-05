@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme: Theme) =>
         valueinput: {
             margin: theme.spacing(1),
             minWidth: 120,
+            fontSize: "22px",
         },
         selectEmpty: {
             marginTop: theme.spacing(2),
@@ -93,6 +94,7 @@ export default function BalanceInput(props: BalanceInput) {
     const [categoryList, setcategoryList] = useState<CategoryData[]>([]);
     const [category, setCategory] = useState<CategoryData>(initialCategoryData);
     const [balance, setBalance] = useState<BalanceData>(initialBalanceData);
+    const [keyClickCount, setKeyClickCount] = useState<number>(1);
     const [categoryCreateOpen, setCategoryCreateOpen] = React.useState(false);
     const { onClose, open } = props;
     const [value, setValue] = useState<number>(0);
@@ -155,6 +157,28 @@ export default function BalanceInput(props: BalanceInput) {
         }
         const value = event.target.value;
         setBalance({ ...balance, [event.target.name]: value });
+    }
+
+    function hundleKeyClick(number: number) {
+        if (number < 0) {
+            setBalance({
+                ...balance,
+                ["value"]: 0,
+            });
+            return 0;
+        }
+        if (number == 10) {
+            setBalance({
+                ...balance,
+                ["value"]: balance.value * 100,
+            });
+            return 0;
+        }
+        setBalance({
+            ...balance,
+            ["value"]: balance.value * 10 + number,
+        });
+        console.log(balance.value * 10 + number);
     }
 
     const categoryTypeChange = (
@@ -256,18 +280,35 @@ export default function BalanceInput(props: BalanceInput) {
                 />
             </FormControl>
             <div className={style.number_key_container}>
-                <button className={style.number_key}></button>
-                <button className={style.number_key}></button>
-                <button className={style.number_key}></button>
-                <button className={style.number_key}></button>
-                <button className={style.number_key}></button>
-                <button className={style.number_key}></button>
-                <button className={style.number_key}></button>
-                <button className={style.number_key}></button>
-                <button className={style.number_key}></button>
-                <button className={style.number_key}></button>
-                <button className={style.number_key}></button>
-                <button className={style.number_key}></button>
+                {[...Array(9)].map((_, index) => {
+                    return (
+                        <button
+                            onClick={() => hundleKeyClick(index + 1)}
+                            className={style.number_key}
+                        >
+                            {index + 1}
+                        </button>
+                    );
+                })}
+
+                <button
+                    onClick={() => hundleKeyClick(-1)}
+                    className={style.number_key}
+                >
+                    AC
+                </button>
+                <button
+                    onClick={() => hundleKeyClick(0)}
+                    className={style.number_key}
+                >
+                    0
+                </button>
+                <button
+                    onClick={() => hundleKeyClick(10)}
+                    className={style.number_key}
+                >
+                    00
+                </button>
             </div>
             <div>
                 <Fade
