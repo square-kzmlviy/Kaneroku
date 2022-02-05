@@ -14,6 +14,8 @@ export default function BalanceColumn(props) {
             />
             <div className={style.name}>{props.data.name}</div>
             <div className={style.value}>{`${props.data.value}円`}</div>
+            <div className={style.aaa}>
+            </div>
         </div>
     );
 }

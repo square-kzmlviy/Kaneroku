@@ -255,6 +255,20 @@ export default function BalanceInput(props: BalanceInput) {
                     onClose={handleCategoryCreateClose}
                 />
             </FormControl>
+            <div className={style.number_key_container} ontouchstart="">
+                <div className={style.number_key}></div>
+                <div className={style.number_key}></div>
+                <div className={style.number_key}></div>
+                <div className={style.number_key}></div>
+                <div className={style.number_key}></div>
+                <div className={style.number_key}></div>
+                <div className={style.number_key}></div>
+                <div className={style.number_key}></div>
+                <div className={style.number_key}></div>
+                <div className={style.number_key}></div>
+                <div className={style.number_key}></div>
+                <div className={style.number_key}></div>
+            </div>
             <div>
                 <Fade
                     in={query === "progress"}

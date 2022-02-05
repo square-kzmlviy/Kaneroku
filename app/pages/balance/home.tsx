@@ -6,11 +6,11 @@ import BalanceConteiner from "../../components/balance/BalanceContainer";
 import { RepositoryFactory } from "../../repositories/RepositoryFactory";
 const balanceRepository = RepositoryFactory.get("balance");
 import { useGetBalance } from "../../components/hooks/useGetBalance";
-import Router from "next/router";
-import { useGetLogInUser } from "../../components/hooks/useGetLogInUser";
+
 export default function Home() {
     const [open, setOpen] = React.useState(false);
     const { getBalance, balance } = useGetBalance();
+    
 
     function handleClickOpen() {
         setOpen(true);
