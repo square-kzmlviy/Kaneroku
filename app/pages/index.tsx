@@ -6,13 +6,15 @@ import Router from "next/router";
 export default function Home() {
     const { getLogInUser, loginUserName, loginStatus, loginUserId, responce } =
         useGetLogInUser();
+    const [view, setView] = useState<number>(0);
     useEffect(() => {
         if (loginStatus) Router.push("/balance/home");
+        setView(responce);
     }, [loginStatus]);
     return (
         <div>
-            {responce ? (
-                <div></div>
+            {!view ? (
+                <div className={style.blank}></div>
             ) : (
                 <div className={style.main_container}>
                     <img

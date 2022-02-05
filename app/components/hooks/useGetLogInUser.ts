@@ -16,7 +16,6 @@ export function useGetLogInUser() {
             setLoginStatus(res.data.logged_in);
             setLoginUserId(res.data.id);
             console.log(res);
-            setResponce(1);
         } catch (error) {
             setResponce(1);
         }
