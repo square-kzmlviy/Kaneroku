@@ -13,7 +13,7 @@ export default function Home() {
     }, [loginStatus]);
     return (
         <div>
-            {!view ? (
+            {!view || !responce ? (
                 <div className={style.blank}></div>
             ) : (
                 <div className={style.main_container}>
