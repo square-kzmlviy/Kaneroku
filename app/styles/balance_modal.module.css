@@ -14,6 +14,6 @@
     height: 10vh;
     border: solid 0.5px#ddd;
 }
-.number_key {
+.number_key:hover {
     background-color: cornflowerblue;
 }
