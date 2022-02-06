@@ -13,9 +13,17 @@ export default function BalanceColumn(props) {
                 }
             />
             <div className={style.name}>{props.data.name}</div>
-            <div className={style.value}>{`${props.data.value}円`}</div>
-            <div className={style.aaa}>
-            </div>
+
+            {props.data.is_income ? (
+                <div
+                    className={style.income_value}
+                >{`+${props.data.value}円`}</div>
+            ) : (
+                <div
+                    className={style.expence_value}
+                >{`- ${props.data.value}円`}</div>
+            )}
+            <div className={style.aaa}></div>
         </div>
     );
 }

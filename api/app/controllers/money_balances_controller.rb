@@ -9,6 +9,7 @@ class MoneyBalancesController < ApplicationController
                                             money_balances.value,
                                             categories.name,
                                             money_balances.date,
+                                            categories.is_income,
                                             category_icons.img_path')
                                             .order('money_balances.date DESC')
       render json: money_balances, status: :ok

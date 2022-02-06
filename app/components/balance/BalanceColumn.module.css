@@ -1,17 +1,26 @@
 .container {
     display: flex;
     align-items: center;
-    margin-bottom: 1vh;
+    margin-top: 1vh;
     height: 6vh;
     border-bottom: solid 1px #eee;
-    font-size: 20px;
     color: #333;
     padding-left: 2vw;
 }
 .name {
     margin-left: 2vw;
+    font-size: 18px;
+    line-height: 6vh;
 }
-.value {
+.expence_value {
     margin-left: auto;
     margin-right: 3vw;
+    font-size: 20px;
+    color: rgb(155, 13, 13);
+}
+.income_value {
+    margin-left: auto;
+    margin-right: 3vw;
+    font-size: 20px;
+    color: rgb(21, 131, 52);
 }

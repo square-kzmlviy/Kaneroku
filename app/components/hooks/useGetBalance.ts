@@ -7,6 +7,7 @@ interface BalanceyData {
     value: number;
     date: string;
     img_path: string;
+    is_income: boolean;
 }
 export function useGetBalance() {
     const [balance, setBalance] = useState<BalanceyData[]>([]);
