@@ -74,7 +74,7 @@ export default function Home() {
             enabled: false,
         },
         xaxis: {
-            categories: [1992, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
+            categories: ["--", "--", "--", "--", "--", "--", "--"],
         },
         yaxis: [
             {
@@ -87,7 +87,7 @@ export default function Home() {
     const [series, setSeries] = useState([
         {
             name: "モチベーション率",
-            data: [30, 40, 45, 50, 49],
+            data: [0, 0, 0, 0, 0],
             type: "area",
         },
     ]);
@@ -114,8 +114,6 @@ export default function Home() {
 
             <BalanceConteiner balance_data={balance} />
             <Footer handleClickOpen={handleClickOpen} />
-
-            {/* <UserInputForm /> */}
         </div>
     );
 }
