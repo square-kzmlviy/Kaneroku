@@ -11,7 +11,7 @@ class BalanceSummarizeController < ApplicationController
         
         def this_week_history
             week_history = []
-            (@this_monday..@this_day+1).each do |current_day|
+            (@this_monday..@this_day).each do |current_day|
                 week_history.push(current_user.money_balances
                                                 .left_joins(:category)
                                                 .where(date:current_day)
@@ -22,7 +22,7 @@ class BalanceSummarizeController < ApplicationController
         end
         def this_week_dates
             week_dates = []
-            (@this_monday..@this_day+1).each do |current_day|
+            (@this_monday..@this_day).each do |current_day|
                 week_dates.push(current_day)
             end
             week_dates
