@@ -33,23 +33,23 @@ export default function Home() {
     function handleClose() {
         setOpen(false);
     }
+    async function test() {
+        const t: BalanceSummarizeData = await getBalanceSummarize();
+        setOptions({
+            ...options,
+            ["xaxis"]: { categories: t.week_dates },
+        });
+        setSeries([
+            {
+                name: "支出額",
+                data: t.week_history,
+                type: "area",
+            },
+        ]);
+        setTodaySum(t.daily_total);
+    }
     useEffect(() => {
         getBalance();
-        async function test() {
-            const t: BalanceSummarizeData = await getBalanceSummarize();
-            setOptions({
-                ...options,
-                ["xaxis"]: { categories: t.week_dates },
-            });
-            setSeries([
-                {
-                    name: "支出額",
-                    data: t.week_history,
-                    type: "area",
-                },
-            ]);
-            setTodaySum(t.daily_total);
-        }
         test();
     }, []);
 
@@ -86,8 +86,8 @@ export default function Home() {
     });
     const [series, setSeries] = useState([
         {
-            name: "モチベーション率",
-            data: [0, 0, 0, 0, 0],
+            name: "支出額",
+            data: [0, 0, 0, 0, 0, 0, 0],
             type: "area",
         },
     ]);
@@ -98,6 +98,7 @@ export default function Home() {
                 open={open}
                 onClose={handleClose}
                 getBalance={getBalance}
+                updateChart={test}
             />
             <div className={style.sum_container}>
                 <h3 className={style.sum_lavel}>今日の合計支出</h3>

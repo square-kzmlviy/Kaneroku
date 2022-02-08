@@ -86,6 +86,7 @@ interface BalanceInput {
     open: boolean;
     onClose: () => void;
     getBalance: () => void;
+    updateChart: () => void;
 }
 
 export default function BalanceInput(props: BalanceInput) {
@@ -130,6 +131,7 @@ export default function BalanceInput(props: BalanceInput) {
                     },
                 });
                 props.getBalance();
+                props.updateChart();
 
                 handleClose();
             } catch (error) {
