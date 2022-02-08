@@ -5,7 +5,7 @@ import BalanceColumn from "./BalanceColumn";
 export default function BalanceContainer(props) {
     var groupCurrentDate;
     return (
-        <div>
+        <div className={style.container}>
             {props.balance_data.map((data, index) => {
                 if (groupCurrentDate != data.date) {
                     groupCurrentDate = data.date;

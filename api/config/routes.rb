@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :categories
   resources :money_balances
   resources :category_icons
+  resources :balance_summarize
 end

@@ -3,14 +3,27 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import BalanceInput from "../../components/modal/BalanceInput";
 import BalanceConteiner from "../../components/balance/BalanceContainer";
-import { RepositoryFactory } from "../../repositories/RepositoryFactory";
-const balanceRepository = RepositoryFactory.get("balance");
 import { useGetBalance } from "../../components/hooks/useGetBalance";
-
+import { useGetBalanceSummarize } from "../../components/hooks/useGetBalanceSummarize";
+import dynamic from "next/dynamic";
+import style from "./home.module.css";
+const Chart = dynamic(
+    () => {
+        return import("react-apexcharts");
+    },
+    { ssr: false }
+);
+interface BalanceSummarizeData {
+    daily_total: number;
+    week_history: [number];
+    week_dates: [number];
+}
 export default function Home() {
+    const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     const [open, setOpen] = React.useState(false);
+    const [todaySum, setTodaySum] = React.useState<number>(0);
     const { getBalance, balance } = useGetBalance();
-    
+    const { getBalanceSummarize, balanceSummarize } = useGetBalanceSummarize();
 
     function handleClickOpen() {
         setOpen(true);
@@ -19,9 +32,64 @@ export default function Home() {
     function handleClose() {
         setOpen(false);
     }
-    useLayoutEffect(() => {
+    useEffect(() => {
         getBalance();
+        async function test() {
+            const t: BalanceSummarizeData = await getBalanceSummarize();
+            setOptions({
+                ...options,
+                ["xaxis"]: { categories: t.week_dates },
+            });
+            setSeries([
+                {
+                    name: "支出額",
+                    data: t.week_history,
+                    type: "area",
+                },
+            ]);
+            setTodaySum(t.daily_total);
+        }
+        test();
     }, []);
+
+    const [options, setOptions] = useState({
+        chart: {
+            id: "basic-bar",
+            // width: "50%",
+            zoom: {
+                enabled: false,
+            },
+        },
+        fill: {
+            opacity: [0.1, 1],
+        },
+
+        stroke: {
+            width: 3,
+            curve: "smooth",
+        },
+
+        dataLabels: {
+            enabled: false,
+        },
+        xaxis: {
+            categories: [1992, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
+        },
+        yaxis: [
+            {
+                title: {
+                    text: "支出額(円)",
+                },
+            },
+        ],
+    });
+    const [series, setSeries] = useState([
+        {
+            name: "モチベーション率",
+            data: [30, 40, 45, 50, 49],
+            type: "area",
+        },
+    ]);
     return (
         <div>
             <Header />
@@ -30,6 +98,19 @@ export default function Home() {
                 onClose={handleClose}
                 getBalance={getBalance}
             />
+            <div className={style.sum_container}>
+                <h3 className={style.sum_lavel}>今日の合計支出</h3>
+                <div className={style.sum_value}>{`${todaySum}円`}</div>
+            </div>
+            <div className={style.chart}>
+                <Chart
+                    options={options}
+                    series={series}
+                    type="line"
+                    height="130%"
+                />
+            </div>
+
             <BalanceConteiner balance_data={balance} />
             <Footer handleClickOpen={handleClickOpen} />
 

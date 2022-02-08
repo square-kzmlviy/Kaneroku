@@ -20,7 +20,7 @@ export default function Home() {
                         width="auto"
                         height="60%"
                     />
-                    <p>自動は万能ではない{process.env.NEXT_PUBLIC_HOST_NAME}</p>
+                    <p>自動は万能ではない</p>
                     <p>節制とは、小さな努力の積み重ね</p>
                     <Link href="/user/log_in">ログイン</Link>
                     <Link href="/user/sign_up">新規登録</Link>
