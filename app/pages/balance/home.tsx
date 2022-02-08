@@ -7,6 +7,7 @@ import { useGetBalance } from "../../components/hooks/useGetBalance";
 import { useGetBalanceSummarize } from "../../components/hooks/useGetBalanceSummarize";
 import dynamic from "next/dynamic";
 import style from "./home.module.css";
+import { ApexOptions } from "apexcharts";
 const Chart = dynamic(
     () => {
         return import("react-apexcharts");
@@ -52,7 +53,7 @@ export default function Home() {
         test();
     }, []);
 
-    const [options, setOptions] = useState({
+    const [options, setOptions] = useState<ApexOptions>({
         chart: {
             id: "basic-bar",
             // width: "50%",
