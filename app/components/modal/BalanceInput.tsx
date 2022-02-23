@@ -230,7 +230,12 @@ export default function BalanceInput(props: BalanceInput) {
                     <Tab label="Income" />
                 </Tabs>
             </Paper>
-            <input type="date" value={balance.date} />
+            <input
+                name="date"
+                type="date"
+                value={balance.date}
+                onChange={handleChange}
+            />
             <TextField
                 id="standard-basic"
                 label="value"

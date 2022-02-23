@@ -16,6 +16,7 @@ const Chart = dynamic(
 );
 interface BalanceSummarizeData {
     daily_total: number;
+    weekly_total: number;
     week_history: [number];
     week_dates: [number];
 }
@@ -23,6 +24,7 @@ export default function Home() {
     const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     const [open, setOpen] = React.useState(false);
     const [todaySum, setTodaySum] = React.useState<number>(0);
+    const [weekSum, setWeekSum] = React.useState<number>(0);
     const { getBalance, balance } = useGetBalance();
     const { getBalanceSummarize, balanceSummarize } = useGetBalanceSummarize();
 
@@ -47,6 +49,7 @@ export default function Home() {
             },
         ]);
         setTodaySum(t.daily_total);
+        setWeekSum(t.weekly_total);
     }
     useEffect(() => {
         getBalance();
@@ -103,6 +106,10 @@ export default function Home() {
             <div className={style.sum_container}>
                 <h3 className={style.sum_lavel}>今日の合計支出</h3>
                 <div className={style.sum_value}>{`${todaySum}円`}</div>
+            </div>
+            <div className={style.sum_container}>
+                <h3 className={style.sum_lavel}>今週の合計支出</h3>
+                <div className={style.sum_value}>{`${weekSum}円`}</div>
             </div>
             <div className={style.chart}>
                 <Chart
