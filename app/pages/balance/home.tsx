@@ -35,6 +35,18 @@ export default function Home() {
     function handleClose() {
         setOpen(false);
     }
+
+    function pilingUp(values: [number]) {
+        let pilingUp = [];
+        values.map((_, index) => {
+            if (index) {
+                pilingUp.push(pilingUp[index - 1] + values[index]);
+            } else {
+                pilingUp.push(values[index]);
+            }
+        });
+        return pilingUp;
+    }
     async function test() {
         const t: BalanceSummarizeData = await getBalanceSummarize();
         setOptions({
@@ -42,6 +54,11 @@ export default function Home() {
             ["xaxis"]: { categories: t.week_dates },
         });
         setSeries([
+            {
+                name: "積上支出額",
+                data: pilingUp(t.week_history),
+                type: "area",
+            },
             {
                 name: "支出額",
                 data: t.week_history,
@@ -64,13 +81,15 @@ export default function Home() {
                 enabled: false,
             },
         },
+        colors: ["#EEB324", "#556CD6"],
+
         fill: {
-            opacity: [0.1, 1],
+            opacity: [0.1, 0.1],
         },
 
         stroke: {
             width: 3,
-            curve: "smooth",
+            curve: "straight",
         },
 
         dataLabels: {
