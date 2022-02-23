@@ -84,12 +84,17 @@ export default function Home() {
         colors: ["#EEB324", "#556CD6"],
 
         fill: {
-            opacity: [0.1, 0.1],
+            opacity: [0.2, 0.4],
+        },
+        markers: {
+            size: 3,
+            colors: ["#EEB324", "#556CD6"],
+            strokeWidth: 1,
         },
 
         stroke: {
-            width: 3,
-            curve: "straight",
+            width: 1,
+            curve: "smooth",
         },
 
         dataLabels: {
