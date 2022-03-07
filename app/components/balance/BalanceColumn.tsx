@@ -8,7 +8,7 @@ export default function BalanceColumn(props) {
             className={style.container}
         >
             <img
-                width="10%"
+                width="8%"
                 src={
                     props.data.img_path
                         ? `/static/${props.data.img_path}.svg`

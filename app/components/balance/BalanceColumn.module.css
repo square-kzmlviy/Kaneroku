@@ -1,8 +1,9 @@
 .container {
     display: flex;
     align-items: center;
-    margin-top: 1vh;
-    height: 6vh;
+    margin-top: 0.3vh;
+    margin-bottom: 0.3vh;
+    height: 5vh;
     border-bottom: solid 1px #eee;
     color: #333;
     padding-left: 2vw;
