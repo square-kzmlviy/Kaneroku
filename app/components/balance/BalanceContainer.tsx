@@ -12,9 +12,7 @@ export default function BalanceContainer(props) {
                     groupCurrentDate = data.date;
                     return (
                         <>
-                            <div
-                                className={style.date}
-                            >{`${data.date} ${daily_sum}`}</div>
+                            <div className={style.date}>{`${data.date}`}</div>
 
                             <BalanceColumn
                                 data={data}
