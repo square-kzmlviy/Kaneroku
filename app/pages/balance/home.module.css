@@ -8,13 +8,12 @@
     align-items: center;
     justify-items: center;
     justify-content: space-between;
-    padding: 0 8vw;
-    font-size: 15px;
+    padding: 0 6vw;
+    font-size: 14px;
 }
 .sum_lavel {
     margin: 0;
     color: #37479a;
-    font-weight: 200;
 }
 .sum_value {
     padding: 0;
@@ -25,5 +24,4 @@
 .monthly_sum_lavel {
     margin: 0;
     color: #37479a;
-    font-weight: 200;
 }
