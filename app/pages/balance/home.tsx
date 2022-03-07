@@ -18,6 +18,7 @@ const Chart = dynamic(
 interface BalanceSummarizeData {
     daily_total: number;
     weekly_total: number;
+    monthly_total: number;
     week_history: [number];
     week_dates: [number];
 }
@@ -36,6 +37,7 @@ export default function Home() {
     const [open, setOpen] = React.useState(false);
     const [todaySum, setTodaySum] = React.useState<number>(0);
     const [weekSum, setWeekSum] = React.useState<number>(0);
+    const [monthSum, setMonthSum] = React.useState<number>(0);
     const [selectBalanceData, setSelectBalanceData] = React.useState<
         BalanceyData[]
     >([]);
@@ -90,6 +92,7 @@ export default function Home() {
         ]);
         setTodaySum(t.daily_total);
         setWeekSum(t.weekly_total);
+        setMonthSum(t.monthly_total);
     }
     useEffect(() => {
         getBalance();
@@ -155,15 +158,20 @@ export default function Home() {
                 select_balance={selectBalanceData}
             />
 
-            <div className={style.sum_container}>
-                <h3 className={style.sum_lavel}>今日の合計支出</h3>
+            {/* <div className={style.sum_container}>
+                <h3 className={style.sum_lavel}>today</h3>
                 <div className={style.sum_value}>{`${todaySum}円`}</div>
-            </div>
+                <h3 className={style.sum_lavel}>weekly</h3>
+                <div className={style.sum_value}>{`${weekSum}円`}</div>
+            </div> */}
 
             <div className={style.sum_container}>
-                <h3 className={style.sum_lavel}>今週の合計支出</h3>
-                <div className={style.sum_value}>{`${weekSum}円`}</div>
+                <h3 className={style.sum_lavel}>{`Weekly:${weekSum}円`}</h3>
+                <h3
+                    className={style.monthly_sum_lavel}
+                >{`Monthly:${monthSum}円`}</h3>
             </div>
+
             <div className={style.chart}>
                 <Chart
                     options={options}

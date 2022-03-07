@@ -4,13 +4,17 @@ import { RepositoryFactory } from "../../repositories/RepositoryFactory";
 const balanceSummarizeRepository = RepositoryFactory.get("balance_summarize");
 interface BalanceSummarizeData {
     daily_total: number;
+    weekly_total: number;
+    monthly_total: number;
     week_history: [number];
     week_dates: [number];
 }
 const initialCategoryData: BalanceSummarizeData = {
     daily_total: 0,
+    weekly_total: 0,
     week_history: [0],
     week_dates: [0],
+    monthly_total: 0,
 };
 export function useGetBalanceSummarize() {
     const [balanceSummarize, setBalanceSummarize] =

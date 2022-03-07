@@ -4,6 +4,7 @@ import style from "./BalanceContainer.module.css";
 import BalanceColumn from "./BalanceColumn";
 export default function BalanceContainer(props) {
     var groupCurrentDate;
+    let daily_sum = 0;
     return (
         <div className={style.container}>
             {props.balance_data.map((data, index) => {
@@ -11,7 +12,10 @@ export default function BalanceContainer(props) {
                     groupCurrentDate = data.date;
                     return (
                         <>
-                            <div className={style.date}>{data.date}</div>
+                            <div
+                                className={style.date}
+                            >{`${data.date} ${daily_sum}`}</div>
+
                             <BalanceColumn
                                 data={data}
                                 key={index}
@@ -19,14 +23,16 @@ export default function BalanceContainer(props) {
                             />
                         </>
                     );
+                } else {
+                    daily_sum = daily_sum + data.value;
+                    return (
+                        <BalanceColumn
+                            data={data}
+                            key={index}
+                            hundleOpen={props.hundleOpen}
+                        />
+                    );
                 }
-                return (
-                    <BalanceColumn
-                        data={data}
-                        key={index}
-                        hundleOpen={props.hundleOpen}
-                    />
-                );
             })}
         </div>
     );

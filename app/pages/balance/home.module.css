@@ -6,12 +6,13 @@
     display: flex;
     margin-top: 2vh;
     align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+    padding: 0 8vw;
 }
 .sum_lavel {
     font-size: 20px;
-    padding: 0;
     margin: 0;
-    margin-left: 7vh;
     color: #37479a;
     font-weight: 200;
 }
@@ -21,4 +22,11 @@
     margin-left: auto;
     margin-right: 13vw;
     margin-bottom: 0;
+}
+.monthly_sum_lavel {
+    font-size: 20px;
+    margin: 0;
+    color: #37479a;
+    font-weight: 200;
+    margin-left: 20vw;
 }
