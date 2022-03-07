@@ -166,10 +166,12 @@ export default function Home() {
             </div> */}
 
             <div className={style.sum_container}>
-                <h3 className={style.sum_lavel}>{`Weekly:${weekSum}円`}</h3>
+                <h3
+                    className={style.sum_lavel}
+                >{`Weekly:${weekSum.toLocaleString()}円`}</h3>
                 <h3
                     className={style.monthly_sum_lavel}
-                >{`Monthly:${monthSum}円`}</h3>
+                >{`Monthly:${monthSum.toLocaleString()}円`}</h3>
             </div>
 
             <div className={style.chart}>

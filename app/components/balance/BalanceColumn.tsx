@@ -20,11 +20,11 @@ export default function BalanceColumn(props) {
             {props.data.is_income ? (
                 <div
                     className={style.income_value}
-                >{`+${props.data.value}円`}</div>
+                >{`+${props.data.value.toLocaleString()}円`}</div>
             ) : (
                 <div
                     className={style.expence_value}
-                >{`- ${props.data.value}円`}</div>
+                >{`- ${props.data.value.toLocaleString()}円`}</div>
             )}
             <div className={style.aaa}></div>
         </div>
