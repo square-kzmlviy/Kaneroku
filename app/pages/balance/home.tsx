@@ -111,6 +111,20 @@ export default function Home() {
             },
         },
         colors: ["#EEB324", "#556CD6"],
+        grid: {
+            row: {
+                colors: ["#eaeaea", "transparent"],
+                opacity: 0.5,
+            },
+            column: {
+                colors: ["#f9f9fb", "transparent"],
+            },
+            xaxis: {
+                lines: {
+                    show: true,
+                },
+            },
+        },
 
         fill: {
             opacity: [0.2, 0.4],
