@@ -98,6 +98,9 @@ export default function Home() {
 
     const [options, setOptions] = useState<ApexOptions>({
         chart: {
+            toolbar: {
+                show: false,
+            },
             id: "basic-bar",
             // width: "50%",
             zoom: {
@@ -126,13 +129,6 @@ export default function Home() {
         xaxis: {
             categories: ["--", "--", "--", "--", "--", "--", "--"],
         },
-        yaxis: [
-            {
-                title: {
-                    text: "支出額(円)",
-                },
-            },
-        ],
     });
     const [series, setSeries] = useState([
         {

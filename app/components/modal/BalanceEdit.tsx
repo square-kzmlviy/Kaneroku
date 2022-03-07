@@ -225,7 +225,6 @@ export default function BalanceInput(props: BalanceInput) {
 
     useEffect(() => {
         setCategories();
-        console.log(props.select_balance);
     }, [isIncome]);
     useEffect(() => {
         setBalance(props.select_balance);
