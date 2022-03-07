@@ -3,23 +3,65 @@
     margin: 10px auto;
 }
 .number_key_container {
-    width: 90%;
+    width: 100%;
     height: 40vh;
     display: flex;
     flex-wrap: wrap;
-    margin-left: 5%;
-    margin-bottom: 2vh;
+    padding-bottom: 2vh;
     touch-action: manipulation;
+    background-size: cover;
+    background-image: url("/static/key_container_background.svg");
+    /* background-color: #566bd6; */
 }
 .number_key {
-    width: 33%;
+    width: 33.3333%;
     height: 10vh;
+    background-color: #ffffff00;
     border: solid 0.5px#eeedff;
-    background-color: #fff;
     font-size: 31px;
-    color: #403e9f;
+    color: #ffffff;
+    font-family: auto;
 }
 
 .container {
-    background-color: cornsilk;
+    background-color: rgb(145, 145, 145);
+}
+
+.modal_header {
+    width: 100%;
+    height: 9vh;
+    background-size: cover;
+    background-image: url("/static/balance_modal_header.svg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: auto;
+}
+.modal_container {
+    background-size: cover;
+    background-image: url("/static/modal_container_background.svg");
+    font-family: auto;
+    position: relative;
+    box-shadow: 0 0px 16px 0 rgb(0 0 0 / 45%);
+}
+
+.modal_container input {
+    font-size: 5.5vw !important;
+    color: #222d62;
+}
+
+.modal_header p {
+    font-size: 6vw;
+    color: #fff;
+    padding: 0;
+}
+
+.date_input {
+    outline: none;
+    border: none;
+    width: 100%;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 1vw;
+    background-color: #ffffff00;
 }

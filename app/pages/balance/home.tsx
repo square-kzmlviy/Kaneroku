@@ -2,6 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import BalanceInput from "../../components/modal/BalanceInput";
+import BalanceEdit from "../../components/modal/BalanceEdit";
 import BalanceConteiner from "../../components/balance/BalanceContainer";
 import { useGetBalance } from "../../components/hooks/useGetBalance";
 import { useGetBalanceSummarize } from "../../components/hooks/useGetBalanceSummarize";
@@ -20,20 +21,42 @@ interface BalanceSummarizeData {
     week_history: [number];
     week_dates: [number];
 }
+
+interface BalanceyData {
+    name: string;
+    id: number;
+    category_id: number;
+    value: number;
+    date: string;
+    img_path: string;
+    is_income: boolean;
+}
 export default function Home() {
     const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     const [open, setOpen] = React.useState(false);
     const [todaySum, setTodaySum] = React.useState<number>(0);
     const [weekSum, setWeekSum] = React.useState<number>(0);
+    const [selectBalanceData, setSelectBalanceData] = React.useState<
+        BalanceyData[]
+    >([]);
     const { getBalance, balance } = useGetBalance();
     const { getBalanceSummarize, balanceSummarize } = useGetBalanceSummarize();
+    const [balanceUpdateOpen, setBalanceUpdateOpen] = React.useState(false);
 
-    function handleClickOpen() {
+    function handleCreateClickOpen() {
         setOpen(true);
     }
 
     function handleClose() {
         setOpen(false);
+    }
+    function handleBalanceUpdateClickOpen(data) {
+        setSelectBalanceData(data);
+        setBalanceUpdateOpen(true);
+    }
+
+    function handleBalanceUpdateClickClose() {
+        setBalanceUpdateOpen(false);
     }
 
     function pilingUp(values: [number]) {
@@ -127,10 +150,20 @@ export default function Home() {
                 getBalance={getBalance}
                 updateChart={test}
             />
+
+            <BalanceEdit
+                open={balanceUpdateOpen}
+                onClose={handleBalanceUpdateClickClose}
+                getBalance={getBalance}
+                updateChart={test}
+                select_balance={selectBalanceData}
+            />
+
             <div className={style.sum_container}>
                 <h3 className={style.sum_lavel}>今日の合計支出</h3>
                 <div className={style.sum_value}>{`${todaySum}円`}</div>
             </div>
+
             <div className={style.sum_container}>
                 <h3 className={style.sum_lavel}>今週の合計支出</h3>
                 <div className={style.sum_value}>{`${weekSum}円`}</div>
@@ -144,8 +177,11 @@ export default function Home() {
                 />
             </div>
 
-            <BalanceConteiner balance_data={balance} />
-            <Footer handleClickOpen={handleClickOpen} />
+            <BalanceConteiner
+                balance_data={balance}
+                hundleOpen={handleBalanceUpdateClickOpen}
+            />
+            <Footer handleClickOpen={handleCreateClickOpen} />
         </div>
     );
 }

@@ -12,11 +12,21 @@ export default function BalanceContainer(props) {
                     return (
                         <>
                             <div className={style.date}>{data.date}</div>
-                            <BalanceColumn data={data} key={index} />
+                            <BalanceColumn
+                                data={data}
+                                key={index}
+                                hundleOpen={props.hundleOpen}
+                            />
                         </>
                     );
                 }
-                return <BalanceColumn data={data} key={index} />;
+                return (
+                    <BalanceColumn
+                        data={data}
+                        key={index}
+                        hundleOpen={props.hundleOpen}
+                    />
+                );
             })}
         </div>
     );

@@ -7,4 +7,7 @@ export default {
     createPost(payload: Object) {
         return Repository.post(`${resource}`, payload);
     },
+    updatePost(payload: Object, id: number) {
+        return Repository.patch(`${resource}/${id}`, payload);
+    },
 };

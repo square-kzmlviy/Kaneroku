@@ -3,7 +3,10 @@ import { useGetLogInUser } from "../hooks/useGetLogInUser";
 import style from "./BalanceColumn.module.css";
 export default function BalanceColumn(props) {
     return (
-        <div className={style.container}>
+        <div
+            onClick={() => props.hundleOpen(props.data)}
+            className={style.container}
+        >
             <img
                 width="10%"
                 src={
