@@ -6,20 +6,27 @@
     width: 100%;
     height: 40vh;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 10px 10px;
     flex-wrap: wrap;
-    padding-bottom: 2vh;
     touch-action: manipulation;
     background-size: cover;
     background-image: url("/static/key_container_background.svg");
     /* background-color: #566bd6; */
 }
+
 .number_key {
-    width: 33.3333%;
-    height: 10vh;
+    width: 31%;
+    height: 8vh;
     background-color: #ffffff00;
-    border: solid 0.5px#eeedff;
+    border: none;
+    border-bottom: solid 0.5px#eeedff;
+    border-right: solid 0.5px#eeedff;
+    border-radius: 11px;
     font-size: 31px;
     color: #ffffff;
+    background-color: #ffffff2b;
     font-family: auto;
 }
 
