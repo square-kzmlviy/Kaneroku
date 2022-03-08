@@ -27,7 +27,7 @@
     font-size: 31px;
     color: #ffffff;
     background-color: #ffffff2b;
-    font-family: auto;
+    font-family: "M PLUS 1p", sans-serif;
 }
 
 .container {
@@ -42,7 +42,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: auto;
+    font-family: "M PLUS 1p", sans-serif;
 }
 .modal_container {
     background-size: cover;

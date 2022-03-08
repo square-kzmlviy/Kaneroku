@@ -243,7 +243,7 @@ export default function BalanceInput(props: BalanceInput) {
         >
             {/* <DialogTitle id="simple-dialog-title">{`Edit Balance`}</DialogTitle> */}
             <div className={style.modal_header}>
-                <p>Edit Balance</p>
+                <p>収支編集</p>
             </div>
             <div className={style.modal_container}>
                 <Paper elevation={0} className={classes.toggle_paper}>
